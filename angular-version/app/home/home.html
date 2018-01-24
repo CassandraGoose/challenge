@@ -1,4 +1,5 @@
-<div class="block-size">
+<div>
+  <h2 className="centered"> Data List with Types and Titles </h2>
     <div class="list-item" ng-repeat="listItem in $ctrl.listItems | orderBy:$ctrl.filters">
     <h2 class="centered">{{listItem.title}}</h2>
     <span>{{$ctrl.replaceString(listItem.type)}}</span>
