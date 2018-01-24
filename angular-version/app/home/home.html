@@ -1,0 +1,7 @@
+<div class="block-size">
+    <div class="list-item" ng-repeat="listItem in $ctrl.listItems | orderBy:$ctrl.filters">
+    <h2 class="centered">{{listItem.title}}</h2>
+    <span>{{listItem.type}}</span>
+    <button ng-click="$ctrl.removeItem($index)" type="button" class="remove-buton" name="remove">REMOVE</button>
+  </div>
+</div>
