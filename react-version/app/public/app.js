@@ -9605,12 +9605,12 @@ var ListComponent = function (_Component) {
     key: 'removeItem',
     value: function removeItem(item) {
       var array = this.state.data;
-      array.splice(this.state.data.indexOf(item), 1);
+      array.splice(array.indexOf(item), 1);
       this.setState({ data: array });
     }
   }, {
-    key: 'replaceString',
-    value: function replaceString(string) {
+    key: 'formatTitle',
+    value: function formatTitle(string) {
       var array = string.split('_');
       if (array.length !== 1) {
         return this.removeUnderScore(array);
@@ -9622,10 +9622,11 @@ var ListComponent = function (_Component) {
   }, {
     key: 'removeUnderScore',
     value: function removeUnderScore(array) {
-      var phoneNumberArray = [];
-      phoneNumberArray.push(array[0].charAt(0).toUpperCase() + array[0].slice(1));
-      phoneNumberArray.push(array[1].charAt(0).toUpperCase() + array[1].slice(1));
-      return phoneNumberArray.join(' ');
+      var typeArray = [];
+      for (var i = 0; i < array.length; i++) {
+        typeArray.push(array[i].charAt(0).toUpperCase() + array[0].slice(1));
+      }
+      return typeArray.join(' ');
     }
   }, {
     key: 'render',
@@ -9652,7 +9653,7 @@ var ListComponent = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'span',
               null,
-              _this2.replaceString(item.type)
+              _this2.formatTitle(item.type)
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'button',
