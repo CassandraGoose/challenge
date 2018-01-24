@@ -19,12 +19,7 @@
 
       vm.replaceString = function(string){
         let array = string.split('_')
-        if(array.length !== 1) {
-          return vm.formatTitle(array)
-        } else {
-          var uppercaseFirstLetter = string.charAt(0).toUpperCase()
-          return uppercaseFirstLetter + string.slice(1)
-        }
+        return vm.formatTitle(array)
       }
 
       vm.formatTitle = function(array) {
@@ -34,5 +29,6 @@
         }
         return typeArray.join(' ')
       }
+
     }
 })()
