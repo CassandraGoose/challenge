@@ -66,29 +66,27 @@
         vm.listItems = data
       }
 
-      vm.removeItem = function(i) {
-        let array = vm.listItems
-        let index = i
-        array.splice(index, 1)
-        console.log(array);
+      vm.removeItem = function(item) {
+        vm.listItems.splice(vm.listItems.indexOf(item), 1)
       }
 
       vm.replaceString = function(string){
         let array = string.split('_')
         if(array.length !== 1) {
-          return this.removeUnderScore(array)
+          return vm.formatTitle(array)
         } else {
+          console.log('hello');
           var uppercaseFirstLetter = string.charAt(0).toUpperCase()
           return uppercaseFirstLetter + string.slice(1)
         }
       }
 
-      vm.removeUnderScore = function(array) {
-        let phoneNumberArray = []
-        phoneNumberArray.push(array[0].charAt(0).toUpperCase() + array[0].slice(1))
-        phoneNumberArray.push(array[1].charAt(0).toUpperCase() + array[1].slice(1))
-        return phoneNumberArray.join(' ')
+      vm.formatTitle = function(array) {
+        let typeArray = []
+        for (var i = 0; i < array.length; i++) {
+          typeArray.push(array[i].charAt(0).toUpperCase() + array[0].slice(1))
+        }
+        return typeArray.join(' ')
       }
-
     }
 })()
