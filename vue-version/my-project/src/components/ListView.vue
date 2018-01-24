@@ -22,16 +22,7 @@ export default {
   },
   methods: {
     removeItem: function(item) {
-      let array = this.items
-      array.splice(array.indexOf(item), 1)
-      this.items = array
-    },
-    sortTheData: function(array) {
-      return array.slice().sort(function(a, b){
-      if(a.title < b.title) return -1
-      if(a.title > b.title) return 1
-      return 0
-      })
+      this.items.splice(this.items.indexOf(item), 1)
     },
     replaceString: function(string) {
       let array = string.split('_')
