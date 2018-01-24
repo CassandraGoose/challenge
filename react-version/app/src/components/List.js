@@ -19,9 +19,9 @@ class ListComponent extends Component {
 })
   }
 
-  removeItem(i) {
+  removeItem(item) {
     let array = this.state.data
-    array.splice(i, 1)
+    array.splice(this.state.data.indexOf(item), 1)
     this.setState({data: array})
   }
 
@@ -51,7 +51,7 @@ class ListComponent extends Component {
           return (<div key={i} className="list-item">
             <h3>{item.title}</h3>
             <span>{this.replaceString(item.type)}</span>
-            <button onClick={() => this.removeItem(i)} className="remove-button">REMOVE</button>
+            <button onClick={() => this.removeItem(item)} className="remove-button">REMOVE</button>
           </div>)
         })}
       </div>

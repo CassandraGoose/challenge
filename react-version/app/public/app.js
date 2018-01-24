@@ -9603,9 +9603,9 @@ var ListComponent = function (_Component) {
     }
   }, {
     key: 'removeItem',
-    value: function removeItem(i) {
+    value: function removeItem(item) {
       var array = this.state.data;
-      array.splice(i, 1);
+      array.splice(this.state.data.indexOf(item), 1);
       this.setState({ data: array });
     }
   }, {
@@ -9657,7 +9657,7 @@ var ListComponent = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'button',
               { onClick: function onClick() {
-                  return _this2.removeItem(i);
+                  return _this2.removeItem(item);
                 }, className: 'remove-button' },
               'REMOVE'
             )
