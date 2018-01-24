@@ -20,7 +20,7 @@ class ListComponent extends Component {
   }
 
   removeItem(item) {
-    let array = this.state.data
+    let array = this.state.data.slice()
     array.splice(array.indexOf(item), 1)
     this.setState({data: array})
   }

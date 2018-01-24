@@ -9604,7 +9604,7 @@ var ListComponent = function (_Component) {
   }, {
     key: 'removeItem',
     value: function removeItem(item) {
-      var array = this.state.data;
+      var array = this.state.data.slice();
       array.splice(array.indexOf(item), 1);
       this.setState({ data: array });
     }
