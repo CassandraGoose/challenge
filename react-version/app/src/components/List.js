@@ -27,12 +27,7 @@ class ListComponent extends Component {
 
   replaceString(string){
     let array = string.split('_')
-    if(array.length !== 1) {
-      return this.formatTitle(array)
-    } else {
-      var uppercaseFirstLetter = string.charAt(0).toUpperCase()
-      return uppercaseFirstLetter + string.slice(1)
-    }
+    return this.formatTitle(array)
   }
 
   formatTitle(array) {
