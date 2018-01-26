@@ -14,8 +14,8 @@ describe('Controllers', function(){
             expect(HomeController.listItems.length).toEqual(9)
         })
         it('should check for correct type format', function() {
-          expect(HomeController.replaceString("phone_number")).toBe("Phone Number")
-          expect(HomeController.replaceString("case").toBe("Case")
+          expect(HomeController.removeUnderscore("phone_number")).toBe("Phone Number")
+          expect(HomeController.removeUnderscore("case")).toBe("Case")
         })
     })
 })

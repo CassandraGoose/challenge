@@ -17,17 +17,17 @@
         vm.listItems.splice(vm.listItems.indexOf(item), 1)
       }
 
-      vm.replaceString = function(string){
-        var array = string.split('_')
-        return vm.formatTitle(array)
+      vm.removeUnderscore = function(string){
+        var parts = string.split('_')
+        return vm.capitalizeAndJoin(parts)
       }
 
-      vm.formatTitle = function(array) {
-        var typeArray = []
+      vm.capitalizeAndJoin = function(array) {
+        var combined = []
         for (var i = 0; i < array.length; i++) {
-          typeArray.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
+          combined.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
         }
-        return typeArray.join(' ')
+        return combined.join(' ')
       }
 
     }
