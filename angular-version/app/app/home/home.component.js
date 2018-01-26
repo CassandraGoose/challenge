@@ -5,6 +5,6 @@
     .module('app')
     .component('home', {
       controller: 'HomeController',
-      templateUrl: 'home/home.html'
+      templateUrl: '/app/home/home.html'
     })
 })()
