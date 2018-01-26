@@ -3,7 +3,7 @@
     <h2 class="centered">Data List with Types and Titles</h2>
     <div v-for="item in orderedItems" class="list-item">
       <h3 class="centered">{{item.title}}</h3>
-      <span :class="item.type">{{replaceString(item.type)}}</span>
+      <span :class="item.type">{{removeUnderscores(item.type)}}</span>
       <button :id="'item_' + item.id" v-on:click="removeItem(item)" class="remove-button">REMOVE</button>
     </div>
   </div>
@@ -23,16 +23,16 @@ export default {
     removeItem: function(item) {
       this.items.splice(this.items.indexOf(item), 1)
     },
-    replaceString: function(string) {
-      let array = string.split('_')
-      return this.formatTitle(array)
+    removeUnderscores: function(string) {
+      let parts = string.split('_')
+      return this.capitalizeAndJoin(parts)
     },
-    formatTitle: function(array) {
-      let typeArray = []
+    capitalizeAndJoin: function(array) {
+      let combined = []
       for (var i = 0; i < array.length; i++) {
-        typeArray.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
+        combined.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
       }
-      return typeArray.join(' ')
+      return combined.join(' ')
     }
   },
   computed: {
