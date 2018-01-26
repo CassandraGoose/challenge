@@ -33,7 +33,7 @@ class ListComponent extends Component {
   formatTitle(array) {
     let typeArray = []
     for (var i = 0; i < array.length; i++) {
-      typeArray.push(array[i].charAt(0).toUpperCase() + array[0].slice(1))
+      typeArray.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
     }
     return typeArray.join(' ')
   }
@@ -46,8 +46,8 @@ class ListComponent extends Component {
         {this.sortTheData(this.state.data).map((item, i) => {
           return (<div key={i} className="list-item">
             <h3>{item.title}</h3>
-            <span>{this.replaceString(item.type)}</span>
-            <button onClick={() => this.removeItem(item)} className="remove-button">REMOVE</button>
+            <span className={item.type}>{this.replaceString(item.type)}</span>
+            <button onClick={() => this.removeItem(item)} className="remove-button" id={"item_" + item.id}>REMOVE</button>
           </div>)
         })}
       </div>
