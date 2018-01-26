@@ -8,6 +8,29 @@
 ## [Vue Version](http://vue-version-challenge.surge.sh/)
 ## [AngularJS Version](http://angularjs-version-challenge.surge.sh/)
 
+
+### How to start/test them locally:
+##### React
+cd into app, npm install
+  - test
+    * npm test
+  - run
+    * npm start
+
+##### Vue
+cd into app, npm install
+  - test
+    * npm test
+  - run
+    * npm start
+
+##### AngularJS
+cd into app, npm install
+  - test
+    * npm test
+  - run
+    * lite-server
+
 ### Notes:
 
 - Vue.js was my favorite to work in. I like having my HTML, JavaScript, and CSS all in one file. It is also like a happy medium between the magic of AngularJS and the brute JS of React.
