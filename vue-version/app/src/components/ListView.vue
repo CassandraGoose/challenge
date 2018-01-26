@@ -1,16 +1,15 @@
 <template>
   <div>
-    <h2 class="centered"> Data List with Types and Titles </h2>
+    <h2 class="centered">Data List with Types and Titles</h2>
     <div v-for="item in orderedItems" class="list-item">
       <h3 class="centered">{{item.title}}</h3>
-      <span>{{replaceString(item.type)}}</span>
-      <button v-on:click="removeItem(item)" class="remove-button">REMOVE</button>
+      <span :class="item.type">{{replaceString(item.type)}}</span>
+      <button :id="'item_' + item.id" v-on:click="removeItem(item)" class="remove-button">REMOVE</button>
     </div>
   </div>
 </template>
 
 <script>
-import _ from 'lodash'
 import listItems from '../listitems'
 
 export default {
