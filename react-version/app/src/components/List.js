@@ -13,8 +13,8 @@ class ListComponent extends Component {
 
   sortTheData(array) {
     return array.slice().sort(function(a, b){
-    if(a.title < b.title) return -1
-    if(a.title > b.title) return 1
+      if(a.title < b.title) return -1
+      if(a.title > b.title) return 1
     return 0
     })
   }
@@ -25,17 +25,17 @@ class ListComponent extends Component {
     this.setState({data: array})
   }
 
-  replaceString(string){
-    let array = string.split('_')
-    return this.formatTitle(array)
+  removeUnderscore(string){
+    let part = string.split('_')
+    return this.capitalizeAndJoin(part)
   }
 
-  formatTitle(array) {
-    let typeArray = []
+  capitalizeAndJoin(array) {
+    let combined = []
     for (var i = 0; i < array.length; i++) {
-      typeArray.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
+      combined.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
     }
-    return typeArray.join(' ')
+    return combined.join(' ')
   }
 
   render() {
@@ -46,7 +46,7 @@ class ListComponent extends Component {
         {this.sortTheData(this.state.data).map((item, i) => {
           return (<div key={i} className="list-item">
             <h3>{item.title}</h3>
-            <span className={item.type}>{this.replaceString(item.type)}</span>
+            <span className={item.type}>{this.removeUnderscore(item.type)}</span>
             <button onClick={() => this.removeItem(item)} className="remove-button" id={"item_" + item.id}>REMOVE</button>
           </div>)
         })}

@@ -497,19 +497,19 @@ var ListComponent = function (_Component) {
       this.setState({ data: array });
     }
   }, {
-    key: 'replaceString',
-    value: function replaceString(string) {
-      var array = string.split('_');
-      return this.formatTitle(array);
+    key: 'removeUnderscore',
+    value: function removeUnderscore(string) {
+      var part = string.split('_');
+      return this.capitalizeAndJoin(part);
     }
   }, {
-    key: 'formatTitle',
-    value: function formatTitle(array) {
-      var typeArray = [];
+    key: 'capitalizeAndJoin',
+    value: function capitalizeAndJoin(array) {
+      var combined = [];
       for (var i = 0; i < array.length; i++) {
-        typeArray.push(array[i].charAt(0).toUpperCase() + array[i].slice(1));
+        combined.push(array[i].charAt(0).toUpperCase() + array[i].slice(1));
       }
-      return typeArray.join(' ');
+      return combined.join(' ');
     }
   }, {
     key: 'render',
@@ -536,7 +536,7 @@ var ListComponent = function (_Component) {
             _react2.default.createElement(
               'span',
               { className: item.type },
-              _this2.replaceString(item.type)
+              _this2.removeUnderscore(item.type)
             ),
             _react2.default.createElement(
               'button',
