@@ -4,6 +4,12 @@
 
 ### I decided to complete this challenge in three frameworks instead of one; this is because I am very interested in Front End Frameworks and thought it might be a good way to compare them.
 
+## [React Version](http://react-version-challenge.surge.sh/)
+## [Vue Version](http://vue-version-challenge.surge.sh/)
+## [AngularJS Version](http://angularjs-version-challenge.surge.sh/)
+
+### Notes:
+
 - Vue.js was my favorite to work in. I like having my HTML, JavaScript, and CSS all in one file. It is also like a happy medium between the magic of AngularJS and the brute JS of React.
 
 - My favorite bug to find made me giggle. I refactored a function to account for strings longer than 2 when changing the format of a the type. I missed changing a hard-coded 0 to an i and instead of changing 'phone_number' to 'Phone Number', it was getting changed to 'Phone Nhone'. I wanted to leave it because it was so fun to say...[Bug](https://github.com/CassandraGoose/challenge/commit/a87ee3ec70b9800e8ff861c9d1367d641aa62562)
