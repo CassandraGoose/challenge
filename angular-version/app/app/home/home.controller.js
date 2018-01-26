@@ -6,7 +6,7 @@
     .controller('HomeController', HomeController)
 
     function HomeController(ListService) {
-      const vm = this
+      var vm = this
       vm.filters = "title"
 
       vm.$onInit = function() {
@@ -18,14 +18,14 @@
       }
 
       vm.replaceString = function(string){
-        let array = string.split('_')
+        var array = string.split('_')
         return vm.formatTitle(array)
       }
 
       vm.formatTitle = function(array) {
-        let typeArray = []
+        var typeArray = []
         for (var i = 0; i < array.length; i++) {
-          typeArray.push(array[i].charAt(0).toUpperCase() + array[0].slice(1))
+          typeArray.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
         }
         return typeArray.join(' ')
       }
