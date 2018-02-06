@@ -23,12 +23,17 @@
       }
 
       vm.capitalizeAndJoin = function(array) {
-        var combined = []
-        for (var i = 0; i < array.length; i++) {
-          combined.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
-        }
-        return combined.join(' ')
+        return array.map(function(word) {
+          return word.charAt(0).toUpperCase() + word.slice(1)
+        }).join(' ')
+        // var combined = []
+        // for (var i = 0; i < array.length; i++) {
+        //   combined.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
+        // }
+        // return combined.join(' ')
       }
+
+
 
     }
 })()

@@ -1,5 +1,6 @@
 import React from 'React'
 import List from '../../src/components/List'
+import Data from '../../src/data'
 
 describe("List Component", () => {
   it('Should render the list in order', () => {
@@ -21,5 +22,12 @@ describe("List Component", () => {
     const span2 = wrapper.find('.case').first()
     expect(span.text()).toContain("Phone Number")
     expect(span2.text()).toContain("Case")
+  })
+  it('Should not modify the original array', () => {
+    const wrapper = mount(<List />)
+    const stateData = wrapper.state().data
+    for (var i = 0; i < Data.length; i++) {
+      expect(Data[i].title).toBe(stateData[i].title)
+    }
   })
 })
