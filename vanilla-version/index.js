@@ -53,13 +53,18 @@ const data = [
 
 function repeatData(data) {
   for (var i = 0; i < data.length; i++) {
-    let div = document.getElementById('repeated-list')
+    let div = document.getElementsByClassName('list-item')
     let h3 = document.createElement('h3')
     let span = document.createElement('span')
-    div.appendChild(h3)
-    div.appendChild(span)
+    let div2 = document.createElement('div')
+    let button = document.createElement('button')
+    div[0].appendChild(h3)
+    h3.classList.add("centered")
+    div[0].appendChild(span)
+    div[0].appendChild(button)
     h3.innerHTML = data[i].title
     span.innerHTML = data[i].type
+    button.innerHTML = 'REMOVE'
   }
 }
 
